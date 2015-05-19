@@ -1,0 +1,8 @@
+doctrine:
+  dbname: trottilib
+  user: root
+  password: root
+  host: localhost
+  driver: pdo_mysql
+security:
+  secret: '}@[])(-AG464x2;#.$_/'

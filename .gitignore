@@ -1,0 +1,12 @@
+*.sql
+*.log
+*.DS_Store
+.DS_Store
+Thumbs.db
+
+.idea/
+*.idea/
+/.idea/
+
+vendor/
+/vendor/

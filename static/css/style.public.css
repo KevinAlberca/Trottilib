@@ -1,0 +1,216 @@
+.wrap {
+  margin: 0 35px;
+}
+.avantages {
+  margin: -20px 0 25px;
+  text-align: center;
+}
+.avantages > div img {
+  width: 400px;
+  height: 175px;
+}
+.avantages > div {
+  font-size: 12px;
+  color: #cccccc;
+  text-align: left;
+}
+.avantages .title {
+  color: #000000;
+}
+.fonctionnement {
+  margin: 25px 0;
+}
+.fonctionnement h2 {
+  padding: 5px 0;
+  background: #5ea0dd;
+  border: 2px solid #41576c;
+  color: #ffffff;
+}
+.map {
+  margin: 20px auto;
+}
+.map img {
+  width: 100%;
+  height: 25;
+}
+.avis {
+  margin: 20px auto;
+  background-color: #cccccc;
+}
+.avis h2,
+.avis h3 {
+  text-decoration: none;
+}
+.avis h3 {
+  margin: -10px 0 0 0;
+  color: #f96c6c;
+  font-weight: 300;
+}
+.avis blockquote cite {
+  color: #f96c6c;
+}
+.avis blockquote cite img {
+  margin: -5px 5px 0 0;
+}
+.but-trottilib {
+  background: #ffffff url('../img/bg-but.png') center center no-repeat;
+  background-size: cover;
+}
+.but-trottilib > div {
+  text-align: center;
+  margin: 40px auto;
+  color: #ffffff;
+  padding: 2px;
+}
+.but-trottilib img {
+  width: 200px;
+  height: 200px;
+  margin: -2px;
+  border-radius: 50%;
+  border: 5px solid #cccccc;
+}
+.buble {
+  width: 35px;
+  height: 35px;
+  margin-right: 15px;
+  border-radius: 50%;
+  border: 2px dotted #cccccc;
+  float: left;
+  text-align: center;
+  font-size: 20px;
+}
+blockquote {
+  margin: 30px auto;
+  background: url('../img/blockquote.png') top left no-repeat;
+  padding: 30px 0 0 30px;
+}
+q {
+  font-size: 25px;
+}
+h1,
+h2,
+h3 {
+  text-decoration: underline;
+}
+.title {
+  text-align: center;
+}
+.btn-primary {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 0;
+}
+.input-primary {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background: grey;
+  border: 2px solid #000000;
+  color: #000000;
+}
+.comment-sabonner {
+  width: auto;
+  height: auto;
+  margin: -20px 35px 20px 0;
+  padding: 5px 10px;
+  float: right;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: #5ea0dd;
+  color: #ffffff;
+  clear: both;
+}
+.comment-sabonner a {
+  color: #ffffff;
+}
+.plan {
+  background: url('../img/epingles.png') left top no-repeat;
+  margin: 0 0 0 50px;
+  padding: 0 0 0 70px;
+}
+.plan .title {
+  color: #5ea0dd;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: left;
+}
+.saisis-adresse {
+  margin: 40px auto;
+}
+.je-recherche {
+  border-left: 2px solid #5ea0dd;
+  margin: 40px auto;
+}
+.comment-ca-marche {
+  width: 100%;
+  height: 300px;
+  background: url('../img/comment-ca-marche.png') center center no-repeat;
+  background-size: cover;
+}
+.comment-ca-marche h1 {
+  width: auto;
+  float: right;
+  margin: 200px 100px 0 0;
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.bg-idee-inovante {
+  width: 100%;
+  height: 200px;
+  margin: 0 0 20px;
+}
+.abonnements {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  text-align: center;
+}
+.abonnements .prix {
+  color: red;
+  font-size: 30px;
+  border-bottom: 2px solid red;
+}
+.abonnements .duree {
+  color: #cccccc;
+  border-bottom: 2px solid red;
+  padding-bottom: 4.5px;
+  padding-left: 5px;
+  margin-left: -5px;
+}
+.abonnements .content {
+  color: #cccccc;
+}
+h1,
+h2 {
+  text-decoration: none;
+}
+h1 small,
+h2 small {
+  color: #f96c6c;
+  margin: -10px 0 0 0;
+}
+.btn-secondary {
+  height: 35px;
+  width: 35px;
+  background-color: #5ea0dd;
+  color: #ffffff;
+  border-radius: 50%;
+}
+.btn-block {
+  margin: 5px auto;
+}
+.btn-commande {
+  background-color: red;
+  color: #ffffff;
+}

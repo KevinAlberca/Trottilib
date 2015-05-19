@@ -1,0 +1,21 @@
+{
+  "name": "Trottilib",
+  "description": "Projet Transversal // SUP'Internet 2017",
+  "autoload": {
+    "psr-0": {"": [
+      "src/"
+    ]}
+  },
+  "require": {
+    "doctrine/dbal": "<2.5",
+    "symfony/yaml": "2.6.*",
+    "components/jquery": "2.1.*",
+    "twitter/bootstrap": "3.3.*"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://packages.zendframework.com/"
+    }
+  ]
+}
