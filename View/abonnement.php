@@ -42,10 +42,7 @@
             echo '<p class="successBlock">'. end($_SESSION['flashBag']['success']) . '</p>';
 
             $_SESSION['panier'] = [];
-
-           $_SESSION['panier'] = $_SESSION['panier'] = [
-
-           ];
+            array_push($_SESSION['panier'], $_POST);
             var_dump($_SESSION);
             //$panier->addToBasket($_POST);
 
