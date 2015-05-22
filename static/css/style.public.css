@@ -240,8 +240,9 @@ h2 small {
   border-left: 2px solid #5ea0dd;
 }
 .successBlock {
-  height: 45px;
+  height: 30px;
   margin: 0;
+  padding: 5px 0 0;
   background-color: #5ea0dd;
   color: #ffffff;
   text-align: center;

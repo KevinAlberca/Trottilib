@@ -1,6 +1,6 @@
 <?php
-function construit_url_paypal()
-{
+
+function construit_url_paypal(){
     $api_paypal = 'https://api-3t.sandbox.paypal.com/nvp?'; // Site de l'API PayPal. On ajoute déjà le ? afin de concaténer directement les paramètres.
     $version = 57.0; // Version de l'API
 

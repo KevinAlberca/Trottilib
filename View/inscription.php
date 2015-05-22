@@ -5,8 +5,8 @@ if (isset($_SESSION['user'])) {
 } else {
 ?>
 
-<div class="row">
-    <div class="col-xs-12 col-sm-offset-3 col-sm-6 text-center">
+<div class="row text-center">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6">
         <form class="form-horizontal" method="POST">
             <div class="form-group col-xs-12">
                 <label for="nom" class="col-sm-2 control-label">Nom</label>
@@ -69,8 +69,6 @@ if (isset($_SESSION['user'])) {
             </div>
         </form>
         <a href="./?page=connexion">Vous avez déjà un compte ? Connectez-vous</a>
-    </div>
-</div>
 <?php
     $new = explode('/',$_POST['date_naissance']);
     @$date_naissance = $new[2].'/'.$new[1].'/'.$new[0];
@@ -99,3 +97,6 @@ if (isset($_SESSION['user'])) {
         }
     }
 }
+?>
+        </div>
+    </div>

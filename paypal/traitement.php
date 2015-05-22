@@ -1,5 +1,6 @@
 <?php
 include("fonction_api.php");
+
 $requete = construit_url_paypal();
 $requete = $requete."&METHOD=GetExpressCheckoutDetails".
     "&TOKEN=".htmlentities($_GET['token'], ENT_QUOTES); // Ajoute le jeton
