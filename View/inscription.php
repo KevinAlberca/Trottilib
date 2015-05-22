@@ -4,35 +4,92 @@ if (isset($_SESSION['user'])) {
 	exit;
 } else {
 ?>
-<form method="POST">
-    <label for="nom">Nom</label><input type="text" name="nom" id="nom" required />
-    <label for="prenom">Prenom</label><input type="text" name="prenom" id="prenom" required /><br />
-    <label for="adresse">Adresse</label><input type="text" name="adresse" id="adresse" required />
-    <label for="code_postal">Code Postal</label><input type="number" name="code_postal" id="code_postal" required /><br />
-    <label for="ville">Ville</label><input type="text" name="ville" id="ville" required />
-    <label for="age">Age</label><input type="number" name="age" id="age" required />
-    <label for="adresse_email">Adresse email</label><input type="email" name="adresse_email" id="adresse_email" required /><br />
-    <label for="pwd">Mot de passe</label><input type="password" name="pwd" id="pwd" required />
-    <label for="pwdCheck">Mot de passe (vérification)</label><input type="password" name="pwdCheck" id="pwdCheck" required /><br />
-    <input type="submit" value="Inscription" />
-</form>
-    <a href="./?page=connexion">Vous avez déjà un compte ? Connectez-vous</a>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6 text-center">
+        <form class="form-horizontal" method="POST">
+            <div class="form-group col-xs-12">
+                <label for="nom" class="col-sm-2 control-label">Nom</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" required />
+                </div>
+            </div>
+            <div class="form-group col-xs-12 ">
+                <label for="prenom" class="col-sm-2 control-label">Prénom</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom" required />
+                </div>
+            </div>
+            <div class="form-group col-xs-12 ">
+                <label for="adresse" class="col-sm-2 control-label">Adresse</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="adresse" name="adresse" placeholder="ex : 2 rue des tulipes" required />
+                </div>
+            </div>
+            <div class="form-group col-xs-12 ">
+                <label for="code_postal" class="col-sm-2 control-label">Code Postal</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="code_postal" name="code_postal" placeholder="94240" required />
+                </div>
+            </div>
+            <div class="form-group col-xs-12 ">
+                <label for="ville" class="col-sm-2 control-label">Ville</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="ville" name="ville" placeholder="L'Haÿ-les-Roses" required />
+                </div>
+            </div>
+            <div class="form-group col-xs-12 ">
+                <label for="date_naissance" class="col-sm-2 control-label">Date de Naissance</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="date_naissance" name="date_naissance" placeholder="JJ/MM/AAAA" required />
+                </div>
+            </div>
+            <div class="form-group col-xs-12 ">
+                <label for="adresse_email" class="col-sm-2 control-label">Adresse e-mail</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="adresse_email" name="adresse_email" placeholder="example@website.org" required />
+                </div>
+            </div>
+            <div class="form-group col-xs-12 ">
+                <label for="pwd" class="col-sm-2 control-label">Mot de passe</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="*********" required />
+                </div>
+            </div>
+            <div class="form-group col-xs-12 ">
+                <label for="pwdCheck" class="col-sm-2 control-label">Mot de passe</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="pwdCheck" name="pwdCheck" placeholder="*********" required />
+                </div>
+            </div>
+            <div class="form-group col-xs-12 ">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Inscription</button>
+                </div>
+            </div>
+        </form>
+        <a href="./?page=connexion">Vous avez déjà un compte ? Connectez-vous</a>
+    </div>
+</div>
 <?php
+    $new = explode('/',$_POST['date_naissance']);
+    @$date_naissance = $new[2].'/'.$new[1].'/'.$new[0];
 
 	@$nom = $_POST['nom'];
 	@$prenom = ucwords($_POST['prenom']);
 	@$adresse = $_POST['adresse'];
 	@$code_postal = $_POST['code_postal'];
     @$ville = $_POST['ville'];
-	@$age = $_POST['age'];
 	@$email = $_POST['adresse_email'];
 	@$pwd = $_POST['pwd'];
 	@$pwdCheck = $_POST['pwdCheck'];
 
+    var_dump($_POST);
+
 
     if(isset($_POST) && !empty($_POST)){
         if($pwd === $pwdCheck){
-            if($user->addUser($nom, $prenom, $email, $pwd, $adresse, $code_postal, $ville)){
+            if($user->addUser($nom, $prenom, $email, $date_naissance, $pwd, $adresse, $code_postal, $ville)){
                 echo "Le compte a été créé";
             } else {
                 echo "Les identifiants sont déjà utilisés pour un compte";

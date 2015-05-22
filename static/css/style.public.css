@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 .wrap {
   margin: 0 35px;
 }
@@ -179,17 +182,18 @@ h3 {
 .abonnements .prix {
   color: red;
   font-size: 30px;
-  border-bottom: 2px solid red;
 }
 .abonnements .duree {
   color: #cccccc;
-  border-bottom: 2px solid red;
   padding-bottom: 4.5px;
   padding-left: 5px;
   margin-left: -5px;
 }
 .abonnements .content {
   color: #cccccc;
+  border-top: 2px solid red;
+  padding: 12px 0 0;
+  margin: 20px 0 10px;
 }
 h1,
 h2 {
@@ -213,4 +217,36 @@ h2 small {
 .btn-commande {
   background-color: red;
   color: #ffffff;
+}
+.btn-search {
+  background-color: #5ea0dd;
+  color: #ffffff;
+  -webkit-box-shadow: #000000 2px 2px 5px;
+  -moz-box-shadow: #000000 2px 2px 5px;
+  box-shadow: #000000 2px 2px 5px;
+}
+.search-adresse {
+  border: 1px solid #5ea0dd;
+  border-radius: 5px;
+  color: #5ea0dd;
+}
+.search-adresse button {
+  padding: 0 30px;
+  background-color: #ffffff;
+}
+.search-adresse .form-control {
+  background-color: #ffffff;
+  border: 0;
+  border-left: 2px solid #5ea0dd;
+}
+.successBlock {
+  height: 45px;
+  margin: 0;
+  background-color: #5ea0dd;
+  color: #ffffff;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }

@@ -5,7 +5,7 @@
 @darkblue: #41576c;
 @red: #f96c6c;
 
-
+body {overflow-x: hidden}
 .wrap {
   margin:0 35px;
 }
@@ -264,12 +264,10 @@ h1, h2, h3 {
 .abonnements .prix {
   color:red;
   font-size:30px;
-  border-bottom:2px solid red;
 }
 
 .abonnements .duree {
   color:@grey;
-  border-bottom:2px solid red;
   padding-bottom: 4.5px;
   padding-left:5px;
   margin-left:-5px;
@@ -277,6 +275,9 @@ h1, h2, h3 {
 
 .abonnements .content {
   color:@grey;
+  border-top:2px solid red;
+  padding:12px 0 0;
+  margin:20px 0 10px;
 }
 
 
@@ -309,4 +310,41 @@ h2 small {
 .btn-commande {
   background-color:red;
   color:@white;
+}
+
+.btn-search {
+  background-color:@blue;
+  color:@white;
+  -webkit-box-shadow: @black 2px 2px 5px;
+  -moz-box-shadow: @black 2px  2px  5px;
+  box-shadow: @black 2px  2px  5px;
+}
+
+.search-adresse {
+  border:1px solid @blue;
+  border-radius: 5px;
+  color:@blue;
+}
+
+.search-adresse button {
+  padding:0 30px;
+  background-color:@white;
+}
+
+.search-adresse .form-control {
+  background-color:@white;
+  border:0;
+  border-left:2px solid @blue;
+}
+
+.successBlock {
+  height:45px;
+  margin:0;
+  background-color: @blue;
+  color:@white;
+  text-align: center;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
 }

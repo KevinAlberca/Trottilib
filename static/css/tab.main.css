@@ -8,24 +8,23 @@
 **********/
 
 .tab-menu {
-	margin: auto;
-	margin-bottom: 20px;
-	width: 304px;
+	margin:0 auto 20px;
+	width:510px;
     height:60px;
 }
 
 .tab-link {
 	display: block;
 	float: left;
-	width: 100px;
-	padding-top: 2px; padding-bottom: 2px;
+
+    padding:2px 10px;
 
 	text-align: center;
 	cursor: pointer;
-	color: #2361AB;
+	color: #5ea0dd;
 	font-family: 'Roboto';
 
-	border: 1px solid #2361AB;
+	border: 1px solid #5ea0dd;
 	background-color: transparent;
 
 
@@ -34,12 +33,12 @@
 }
 
 .tab-link-active {
-	background-color: #2361AB;
+	background-color: #5ea0dd;
 	color: white;
 }
 
 .tab-link-active {
-	background-color: #2361AB;
+	background-color: #5ea0dd;
 	color: white;
 }
 

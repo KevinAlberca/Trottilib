@@ -1,6 +1,7 @@
 <?php if(isset($_SESSION['panier']) && !empty($_SESSION['panier'])){?>
 
-<table border style="text-align:center;">
+<div class="table-responsive">
+<table class="table table-bordered table-stripped">
     <thead>
     <tr>
         <th>Nom</th>
@@ -11,22 +12,28 @@
     </tr>
     </thead>
     <tbody>
+<?php
+    for($i=0;$i<count($_SESSION['panier'])/3;$i++){
+        echo '<tr>
+            <td>'. $_SESSION['panier']['abonnement'].'</td>
+            <td>'.count($_SESSION['panier']['abonnement']).'</td>
+            <td>'. $_SESSION['panier']['duree']. ' jours</td>
+            <td>'.$_SESSION['panier']['prix'].' € (euros)</td>
+        </tr>';
+    }
+?>
         <tr>
-            <td><?php echo $_SESSION['panier']['abonnement']; ?></td>
-            <td><?php echo count($_SESSION['panier']['abonnement']); ?></td>
-            <td><?php echo $_SESSION['panier']['duree']; ?></td>
-            <td><?php echo $_SESSION['panier']['prix']; ?></td>
-            <td><a href="?page=<?php echo $_GET['page']; ?>&del=<?php echo $_SESSION['panier']['abonnement']; ?>">Suppression</a></td>
+            <td colspan="5" class="text-center"><button class="btn btn-primary">Payer</button></td>
         </tr>
     </tbody>
     </table>
+</div>
 
 <?php
 
-    var_dump($_GET);
+    var_dump($_SESSION);
 
-    if (isset($_GET['del']) == $_SESSION['panier']['abonnement']) {
-        echo 'on supprime';
-        unset($_SESSION['panier']);
-    }
+} else {
+    header('Location: ./?page=abonnement');
+    exit;
 }

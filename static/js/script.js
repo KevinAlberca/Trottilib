@@ -1,6 +1,5 @@
 $(function(){
 
-    function redirectoTo(Page){
-        window.location(Page);
-    }
+    $('.successBlock').slideDown( 300 ).delay( 2500 ).fadeOut( 400 );
+
 });

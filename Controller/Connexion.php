@@ -5,6 +5,10 @@ class Connexion extends PDO
 {
     static $db;
 
+    public function __construct(){
+        return self::$db;
+    }
+
     public static function getPDO(){
         $conn = NULL;
         try {
@@ -16,9 +20,5 @@ class Connexion extends PDO
         }
 
         self::$db = $conn;
-    }
-
-    public function __construct(){
-        return self::$db;
     }
 }

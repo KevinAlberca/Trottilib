@@ -1,4 +1,4 @@
-<footer>
+<footer class="text-center">
     <div class="container-fluid join-us">
         <div class="col-xs-12 col-sm-9">
             <h1>Vous voulez en apprendre plus sur Trottilib' ?</h1>
@@ -13,16 +13,16 @@
             <img src="./static/img/AppStore.png" alt="Téléchargez l'application sur l'Apple Store" class="img-responsive"/>
         </div>
     </div>
-    <div class="col-xs-12 col-sm-4">
-        <i>En attente du logo</i>
+    <div class="col-xs-12 col-sm-4 logo">
+        <img src="./static/img/Logo.png" alt="Logo Trottilib'"/>
     </div>
-    <div class="col-xs-12 col-sm-4 text-center">
+    <div class="col-xs-12 col-sm-4">
         <blockquote>
             <q>Trottilib', un moyen de transport innovant, qui garantie une rapidité dans les trajets courts.</q>
             <cite>- L'Équipe</cite>
         </blockquote>
     </div>
-    <div class="col-xs-12 col-sm-4 text-center">
+    <div class="col-xs-12 col-sm-4">
         <h3 class="title">Newsletter</h3>
         <input type="text" name="newsletter" placeholder="Votre adresse e-mail" class="input-primary"/> <input type="submit" value="S'inscrire" class="btn btn-primary" />
         <hr />

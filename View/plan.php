@@ -11,9 +11,9 @@
             <h1 class="title">1.Je saisis une adresse</h1>
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="input-group">
+                    <div class="input-group search-adresse">
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-default" >Ici</button>
+                            <button type="button" class="btn" ><span class="glyphicon glyphicon-map-marker"></span>Ici</button>
                         </div><!-- /btn-group -->
                         <input type="text" class="form-control" placeholder="Adresse, ville, code postal, métro">
                     </div><!-- /input-group -->
@@ -40,8 +40,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-offset-2 col-xs-8 col-sm-offset-4 col-sm-4">
-            <button class="btn btn-block" type="submit">Rechercher</button>
+        <div class="col-xs-offset-2 col-xs-8 col-sm-offset-5 col-sm-2">
+            <button class="btn btn-block btn-search" type="submit">Rechercher</button>
         </div>
         <div class="col-xs-12 map">
             <img src="./static/img/plan-avec-trotti.png" alt="" class="img-responsive"/>

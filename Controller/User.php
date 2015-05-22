@@ -36,7 +36,7 @@ class User extends Connexion {
     }
 
 
-    public function addUser($nom, $prenom, $email, $pass, $adresse, $code_postal, $ville) {
+    public function addUser($nom, $prenom, $email, $date_naissance, $pass, $adresse, $code_postal, $ville) {
         $nbUser = $this->countUserByPseudo($email);
 
         if (!$nbUser) {
@@ -45,17 +45,20 @@ class User extends Connexion {
             $pass = $resultHash['pass'];
             $salt = $resultHash['salt'];
 
-            $request = $this->_conn->prepare('INSERT INTO users(nom, prenom, email, password, adresse, code_postal, ville, date_inscription, salt) VALUES (UPPER(:nom), :prenom, :email,:password, :adresse, :code_postal, :ville, NOW(), :salt)');
+            $request = $this->_conn->prepare('INSERT INTO users(nom, prenom, email, date_naissance, password, adresse, code_postal, ville, date_inscription, salt)
+                                            VALUES (:nom, :prenom, :email, :date_naissance, :password, :adresse, :code_postal, :ville, NOW(), :salt)');
             $response = $request->execute ([
                 'nom' => $nom,
-                'prenom' => $prenom,
+                'prenom' => ucwords($prenom),
                 'email' => $email,
+                'date_naissance' => $date_naissance,
                 'password' => $pass,
                 'adresse' => $adresse,
                 'code_postal' => $code_postal,
-                'ville' => $ville,
+                'ville' => ucwords($ville),
                 'salt' => $salt
             ]);
+
             return $response;
         } else {
             $response = false;

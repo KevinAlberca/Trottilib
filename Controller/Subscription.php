@@ -1,6 +1,10 @@
 <?php
 
 class Subscription extends Connexion{
+
+    public function __construct(){
+
+    }
 	
 	public function showAllSubscription(){
         $req = self::$db->prepare('SELECT * FROM abonnement');
@@ -18,9 +22,4 @@ class Subscription extends Connexion{
 
         return $req->fetch();
     }
-
-	// Ajouter un abonnement : INSERT INTO abonnement
-	public function __construct(){
-
-	}
 }

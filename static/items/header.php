@@ -10,7 +10,7 @@
     </div>
 
     <div class="logo">
-        <i>En attente du logo</i>
+        <img src="./static/img/Logo.png" alt="Logo Trottilib'"/>
     </div>
     <h1>Trottilib'</h1>
     <nav class="navbar navbar-default">
@@ -30,14 +30,17 @@
                     <li><a href="./?page=abonnement">Nos Abonnements</a></li>
                     <li><a href="./?page=comment-ca-marche">Comment ça marche ?</a></li>
                     <li><a href="./?page=plan">Plan des stations</a></li>
-<?php
-if(isset($_SESSION['user']) && !empty($_SESSION['user']) ) {
-    echo '<li><a href="./?page=MonEspace">Mon Espace { ' .$_SESSION['user']['nom'] .' '.$_SESSION['user']['prenom']. '}</a></li>';
-    echo '<li><a href="./?page=logout">Deconnexion</a></li>';
-}else {
-    echo '<li><a href="./?page=connexion">Mon Espace</a></li>';
-}
-?>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <?php
+                    if(isset($_SESSION['user']) && !empty($_SESSION['user']) ) {
+                        echo '<li><a href="./?page=MonEspace">Mon Espace</a></li>';
+                        echo '<li><a href="./?page=panier"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>';
+                        echo '<li><a href="./?page=logout"><span class="glyphicon glyphicon-log-out"></span></a></li>';
+                    }else {
+                        echo '<li><a href="./?page=connexion">Mon Espace</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>

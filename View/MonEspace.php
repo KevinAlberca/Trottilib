@@ -46,7 +46,7 @@
                     <input type="submit"/>
                 </form>
                 <?php
-                
+
 
                 ?>
             </div>
@@ -79,7 +79,6 @@ if(isset($_POST['new_adresse'], $_POST['new_codePostal'], $_POST['new_Ville'])) 
 
 
     $_SESSION['user'] = array_merge($_SESSION['user'], $u);
-
 }
 ?>
             </div>

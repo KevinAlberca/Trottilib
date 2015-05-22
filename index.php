@@ -58,6 +58,23 @@
     ];
 
 
+function addMessageFlash($type, $message)
+{
+    // autorise que 4 types de messages flash
+    $types = ['success','error','alert','info'];
+    if (!in_array($type, $types)) {
+        return false;
+    }
+    // on vérifie que le type existe
+    if (!isset($_SESSION['flashBag'][$type])) {
+        //si non on le créé avec un Array vide
+        $_SESSION['flashBag'][$type] = [];
+    }
+    // on ajoute le message
+    $_SESSION['flashBag'][$type][] = $message;
+}
+
+
 if(isset($_GET['page'])){
     $page = $_GET['page'];
     if(!isset($routing[$page])){
@@ -104,14 +121,17 @@ $panier = new Basket(Connexion::getPDO());
     }
 
     require_once('View/'.$page.'.php');
+
     require_once 'static/items/footer.php';
+
 
 ?>
 
 
+
 <script src="./static/js/bootstrap.min.js"></script>
-<script src="./static/js/npm.js"></script>
 <script src="./static/js/tab.js"></script>
+<script src="./static/js/script.js"></script>
 <script>
     $(function() {
         $('#myOwnTab').tabJs();
