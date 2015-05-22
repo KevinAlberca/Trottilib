@@ -13,12 +13,12 @@
     </thead>
     <tbody>
 <?php
-    for($i=0;$i<count($_SESSION['panier'])/3;$i++){
+    for($i=0;$i<count($_SESSION['panier']);$i++){
         echo '<tr>
-            <td>'. $_SESSION['panier']['abonnement'].'</td>
-            <td>'.count($_SESSION['panier']['abonnement']).'</td>
-            <td>'. $_SESSION['panier']['duree']. ' jours</td>
-            <td>'.$_SESSION['panier']['prix'].' € (euros)</td>
+            <td>'. $_SESSION['panier'][$i]['abonnement'].'</td>
+            <td>'.count($_SESSION['panier'][$i]['abonnement']).'</td>
+            <td>'. $_SESSION['panier'][$i]['duree']. ' jours</td>
+            <td>'.$_SESSION['panier'][$i]['prix'].' € (euros)</td>
         </tr>';
     }
 ?>
@@ -30,8 +30,6 @@
 </div>
 
 <?php
-
-    var_dump($_SESSION);
 
 } else {
     header('Location: ./?page=abonnement');
