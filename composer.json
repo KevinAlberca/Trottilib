@@ -8,7 +8,8 @@
   },
   "require": {
     "doctrine/dbal": "<2.5",
-    "symfony/yaml": "2.6.*"
+    "symfony/yaml": "2.6.*",
+    "payum/payum": "1.0.*@dev"
   },
   "repositories": [
     {
