@@ -1,4 +1,19 @@
-<?php if(isset($_SESSION['panier']) && !empty($_SESSION['panier'])){?>
+<?php 
+
+if(isset($_POST['paiement']) && !empty($_POST['paiement'])){
+        for($i = 0; $i<count($_SESSION['panier']); $i++){
+            @$prix = $prix + $_SESSION['panier'][$i]['prix'];
+        }
+        echo $prix;
+        $_SESSION['paypal'] = [
+            'prix' => $prix,
+        ];
+
+        require 'View/paypal/traitement.php';
+
+}
+
+if(isset($_SESSION['panier']) && !empty($_SESSION['panier'])){?>
 <div class="table-responsive">
 <table class="table table-bordered table-stripped">
     <thead>
@@ -35,9 +50,7 @@
     </tbody>
     </table>
 </div>
-
 <?php
-
     if(isset($_GET['del']) && !empty($_GET['del'])){
         if(count($_SESSION['panier']) == 1){
             unset($_SESSION['panier']);
@@ -53,12 +66,10 @@
         $_SESSION['paypal'] = [
             'prix' => $prix,
         ];
-        include 'View/paypal/traitement.php';
     }
 
 
-} else {
-    header('Location: ./?page=abonnement');
-    exit;
-}
-?>
+} //else {
+  //  header('Location: ./?page=abonnement');
+   // exit;
+//}

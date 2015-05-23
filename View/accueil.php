@@ -62,12 +62,12 @@
     <div class="container-fluid avantages">
         <h2 class="title">Avantages</h2>
         <div class="col-xs-12 col-sm-4">
-            <h4 class="title">Efficacite</h4>
+            <h4 class="title">Efficacité</h4>
             <img src="static/img/efficacite.png" alt="" class="img-responsive"/>
             Une efficacité à toute épreuve, qui vous permet de gagner du temps dans vos déplacements et vous permet d’éviter ces petits retards du quotidien.
         </div>
         <div class="col-xs-12 col-sm-4">
-            <h4 class="title">Rapidite</h4>
+            <h4 class="title">Rapidité</h4>
             <img src="static/img/rapidite.png" alt="" class="img-responsive"/>
             Un moyen de transport qui permet de se déplacer plus rapidement et vous permet d’éviter les longs trajets à pieds.Un moyen économique pour gagner du temps
         </div>
