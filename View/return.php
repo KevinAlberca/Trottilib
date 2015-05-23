@@ -25,7 +25,7 @@ if (!$resultat_paypal){  // S'il y a une erreur, on affiche "Erreur", suivi du d
     if ($liste_param_paypal['ACK'] == 'Success') {
         echo "<h1>Youpii, le paiement a été effectué</h1>";
         foreach($_SESSION['panier'] as $article) {
-            $abo->subscribe($_SESSION['user']['id'], $article['abonnement'], $article['duree']);
+            $abo->subscribe($_SESSION['user']['id'], $article['id_abonnement'], $article['duree']);
         }
     } else { // En cas d'échec, affiche la première erreur trouvée.
         echo "<p>Erreur de communication avec le serveur PayPal.<br />".$liste_param_paypal['L_SHORTMESSAGE0']."<br />".$liste_param_paypal['L_LONGMESSAGE0']."</p>";

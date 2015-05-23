@@ -7,11 +7,11 @@ class Subscription extends Connexion{
     }
 
     public function subscribe($id, $abonnement, $duree){
-        $req = self::$db->prepare('INSERT INTO abonnement_par_user(id_user, id_abonnement, date_debut, date_fin) VALUES (:id_user, :id_abonnement, NOW(), :date_fin)');
+        $req = self::$db->prepare('INSERT INTO abonnement_par_user(id_user, id_abonnement, date_debut, date_fin) VALUES (:id_user, :id_abonnement, NOW(), current_date + INTERVAL :duree DAY)');
         $req->execute([
             'id_user' => $id,
             'id_abonnement' => $abonnement,
-            'date_fin' => 'NOW()'.$duree,
+            'duree' => $duree,
         ]);
 
         return $req->fetch();

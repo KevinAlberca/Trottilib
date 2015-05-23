@@ -139,7 +139,6 @@ $panier = new Basket(Connexion::getPDO());
     if($page != 'accueil'){
         require_once 'static/items/header.php';
     }
-
     require_once('View/'.$page.'.php');
 
     require_once 'static/items/footer.php';

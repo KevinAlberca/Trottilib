@@ -25,6 +25,7 @@
                     <span class="prix"><?php echo $a[$i]['prix']; ?> €</span>
                     <span class="duree"><?php echo $a[$i]['duree']; ?></span><br />
                     <p class="content"><?php echo $a[$i]['contenu']; ?></p>
+                    <input type="hidden" name="id_abonnement" value="<?php echo $a[$i][0]; ?>" />
                     <input type="hidden" name="abonnement" value="<?php echo $a[$i][1]; ?>" />
                     <input type="hidden" name="duree" value="<?php echo $a[$i][2]; ?>" />
                     <input type="hidden" name="prix" value="<?php echo $a[$i][3]; ?>" />
@@ -43,6 +44,7 @@
                 $_SESSION['panier'] = [];
             }
             array_push($_SESSION['panier'], $_POST);
+
             //$panier->addToBasket($_POST);
 
 

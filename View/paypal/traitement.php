@@ -2,8 +2,8 @@
 include("fonction_api.php");
 $requete = construit_url_paypal();
 $requete = $requete."&METHOD=SetExpressCheckout".
-    "&CANCELURL=".urlencode("http://awh.dev/Trotti-back/?page=cancel").
-    "&RETURNURL=".urlencode("http://awh.dev/Trotti-back/?page=return").
+    "&CANCELURL=".urlencode("http://127.0.0.1/Trotti/?page=cancel").
+    "&RETURNURL=".urlencode("http://127.0.0.1/Trotti/?page=return").
     "&AMT=10.0".
     "&CURRENCYCODE=EUR".
     "&DESC=".urlencode("Abonnement Trottilib', la trottinette en libre service sur Paris").
