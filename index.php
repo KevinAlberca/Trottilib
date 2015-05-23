@@ -50,6 +50,26 @@
             'secure' => true,
         ],
 
+        'paiement' => [
+            'controller' => 'paypal/traitement',
+            'secure' => true,
+        ],
+
+        'api' => [
+            'controller' => 'paypal/fonction_api',
+            'secure' => true,
+        ],
+
+        'return' => [
+            'controller' => 'return',
+            'secure' => true,
+        ],
+
+        'cancel' => [
+            'controller' => 'cancel',
+            'secure' => true,
+        ],
+
         '404' => [
             'controller' => '404',
             'secure' => false,

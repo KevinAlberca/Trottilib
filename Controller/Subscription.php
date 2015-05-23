@@ -5,6 +5,17 @@ class Subscription extends Connexion{
     public function __construct(){
 
     }
+
+    public function subscribe($id, $abonnement, $duree){
+        $req = self::$db->prepare('INSERT INTO abonnement_par_user(id_user, id_abonnement, date_debut, date_fin) VALUES (:id_user, :id_abonnement, NOW(), :date_fin)');
+        $req->execute([
+            'id_user' => $id,
+            'id_abonnement' => $abonnement,
+            'date_fin' => 'NOW()'.$duree,
+        ]);
+
+        return $req->fetch();
+    }
 	
 	public function showAllSubscription(){
         $req = self::$db->prepare('SELECT * FROM abonnement');

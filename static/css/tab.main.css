@@ -21,10 +21,10 @@
 
 	text-align: center;
 	cursor: pointer;
-	color: #5ea0dd;
+	color: #666;
 	font-family: 'Roboto';
 
-	border: 1px solid #5ea0dd;
+	border: 1px solid #ccc;
 	background-color: transparent;
 
 
@@ -33,25 +33,12 @@
 }
 
 .tab-link-active {
-	background-color: #5ea0dd;
+	background-color: #ccc;
 	color: white;
-}
-
-.tab-link-active {
-	background-color: #5ea0dd;
-	color: white;
-}
-
-.tab-link-left {
-	border-radius: 8px 0px 0px 8px;
 }
 
 .tab-link-middle {
 	border-left: none; border-right: none;
-}
-
-.tab-link-right {
-	border-radius: 0px 8px 8px 0px;
 }
 
 
@@ -64,10 +51,10 @@
 	position: relative;
 	width: 80%;
 	/* Height définit par JS */
+    margin:0 auto 30px;
 	height: 0; 
 	overflow: hidden;
 
-	margin: auto;
 
 	background-color: transparent;
 }

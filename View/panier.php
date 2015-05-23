@@ -1,6 +1,4 @@
-<?php if(isset($_SESSION['panier']) && !empty($_SESSION['panier'])){
-    var_dump($_SESSION['panier']);
-?>
+<?php if(isset($_SESSION['panier']) && !empty($_SESSION['panier'])){?>
 <div class="table-responsive">
 <table class="table table-bordered table-stripped">
     <thead>
@@ -14,10 +12,7 @@
     </thead>
     <tbody>
 <?php
-echo count($_SESSION['panier']);
     foreach($_SESSION['panier'] as $article){
-        $i = 0;
-        $i = $i++;
         $del = mt_rand(1, 1000);
         echo '<tr>
             <td>'.$article['abonnement'].'</td>
@@ -43,12 +38,10 @@ echo count($_SESSION['panier']);
 
 <?php
 
-    var_dump($_GET);
     if(isset($_GET['del']) && !empty($_GET['del'])){
         if(count($_SESSION['panier']) == 1){
             unset($_SESSION['panier']);
         }
-
         unset($_SESSION['panier'][$_GET['del']]['abonnement'], $_SESSION['panier'][$_GET['del']]['duree'], $_SESSION['panier'][$_GET['del']]['prix'], $_SESSION['panier'][$_GET['del']]);
     }
 
@@ -57,6 +50,10 @@ echo count($_SESSION['panier']);
             @$prix = $prix + $_SESSION['panier'][$i]['prix'];
         }
         echo $prix;
+        $_SESSION['paypal'] = [
+            'prix' => $prix,
+        ];
+        include 'View/paypal/traitement.php';
     }
 
 
@@ -64,3 +61,4 @@ echo count($_SESSION['panier']);
     header('Location: ./?page=abonnement');
     exit;
 }
+?>
