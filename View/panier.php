@@ -69,7 +69,7 @@ if(isset($_SESSION['panier']) && !empty($_SESSION['panier'])){?>
     }
 
 
-} //else {
-  //  header('Location: ./?page=abonnement');
-   // exit;
-//}
+} else {
+    header('Location: ./?page=abonnement');
+    exit;
+}

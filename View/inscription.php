@@ -1,12 +1,12 @@
 <?php 
 if (isset($_SESSION['user'])) {
-	header('Location: ?page=accueil');
-	exit;
+    header('Location: ?page=accueil');
+    exit;
 } else {
 ?>
 
-<div class="row text-center">
-    <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+<div class="row">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6 text-center">
         <form class="form-horizontal" method="POST">
             <div class="form-group col-xs-12">
                 <label for="nom" class="col-sm-2 control-label">Nom</label>
@@ -68,35 +68,35 @@ if (isset($_SESSION['user'])) {
                 </div>
             </div>
         </form>
-        <a href="./?page=connexion">Vous avez déjà un compte ? Connectez-vous</a>
+        <a href="./?page=connexion">Vous avez déjà un compte ? Connectez-vous</a><br/>
 <?php
     $new = explode('/',$_POST['date_naissance']);
-    @$date_naissance = $new[2].'/'.$new[1].'/'.$new[0];
-
-	@$nom = $_POST['nom'];
-	@$prenom = ucwords($_POST['prenom']);
-	@$adresse = $_POST['adresse'];
-	@$code_postal = $_POST['code_postal'];
-    @$ville = $_POST['ville'];
-	@$email = $_POST['adresse_email'];
-	@$pwd = $_POST['pwd'];
-	@$pwdCheck = $_POST['pwdCheck'];
-
-    var_dump($_POST);
+    $date_naissance = $new[2].'/'.$new[1].'/'.$new[0];
+echo $date_naissance;
+    $nom = strtoupper($_POST['nom']);
+    $prenom = ucwords($_POST['prenom']);
+    $adresse = $_POST['adresse'];
+    $code_postal = $_POST['code_postal'];
+    $ville = ucwords($_POST['ville']);
+    $email = $_POST['adresse_email'];
+    $pwd = $_POST['pwd'];
+    $pwdCheck = $_POST['pwdCheck'];
 
 
     if(isset($_POST) && !empty($_POST)){
         if($pwd === $pwdCheck){
             if($user->addUser($nom, $prenom, $email, $date_naissance, $pwd, $adresse, $code_postal, $ville)){
+
                 echo "Le compte a été créé";
             } else {
-                echo "Les identifiants sont déjà utilisés pour un compte";
+                echo "Une erreur est survenue lors de l'inscription";
             }
+            var_dump($user->addUser($nom, $prenom, $email, $date_naissance, $pwd, $adresse, $code_postal, $ville));
         } else {
             echo 'Le mot de passe et sa vérification doivent être identiques';
         }
     }
 }
 ?>
-        </div>
+    </div>
     </div>

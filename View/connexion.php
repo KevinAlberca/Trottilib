@@ -24,7 +24,9 @@ if(isset($_POST) && !empty($_POST)){
                 'date_inscription' => $user->connect($email, $pass)['date_inscription'],
             ];
             addMessageFlash('success', "Bonjour ".$_SESSION['user']['nom']. " ".$_SESSION['user']['prenom'].' !');
-            echo '<p class="successBlock">'. end($_SESSION['flashBag']['success']) . '</p>';
+            echo '<script>setTimeout(function(){document.location.href="./?page=accueil";}, 2500);</script>
+            <p class="successBlock">'. end($_SESSION['flashBag']['success']) . '</p>';
+
         } else {
             echo 'Aucun utilisateur n\'a été trouvé avec les informations données';
         }

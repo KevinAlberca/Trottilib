@@ -39,23 +39,23 @@ class User extends Connexion {
     public function addUser($nom, $prenom, $email, $date_naissance, $pass, $adresse, $code_postal, $ville) {
         $nbUser = $this->countUserByPseudo($email);
 
-        if (!$nbUser) {
+        if ($nbUser == 0) {
 
             $resultHash = $this->hashPassword($pass,false);
             $pass = $resultHash['pass'];
             $salt = $resultHash['salt'];
 
-            $request = $this->_conn->prepare('INSERT INTO users(nom, prenom, email, date_naissance, password, adresse, code_postal, ville, date_inscription, salt)
-                                            VALUES (:nom, :prenom, :email, :date_naissance, :password, :adresse, :code_postal, :ville, NOW(), :salt)');
-            $response = $request->execute ([
+            $request = self::$db->prepare('INSERT INTO users(nom, prenom, email, password, date_naissance adresse, code_postal, ville, date_inscription, salt)
+                                            VALUES (:nom, :prenom, :email, :date_naissance :password, :adresse, :code_postal, :ville, NOW(), :salt)');
+            $response = $request->execute([
                 'nom' => $nom,
-                'prenom' => ucwords($prenom),
+                'prenom' => $prenom,
                 'email' => $email,
                 'date_naissance' => $date_naissance,
                 'password' => $pass,
                 'adresse' => $adresse,
                 'code_postal' => $code_postal,
-                'ville' => ucwords($ville),
+                'ville' => $ville,
                 'salt' => $salt
             ]);
 
