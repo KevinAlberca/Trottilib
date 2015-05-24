@@ -26,11 +26,11 @@ class Subscription extends Connexion{
 	}
 
     public function showMySubscription($id){
-        $req = self::$db->prepare('SELECT * FROM abonnement WHERE user_id = :id');
+        $req = self::$db->prepare('SELECT a.nom, DATE_FORMAT(app.date_debut, "%d %M %Y") as date_debut, app.date_fin FROM abonnement_par_user app INNER JOIN abonnement a ON a.id = app.id_abonnement WHERE id_user = :id');
         $req->execute([
             'id' => $id,
         ]);
 
-        return $req->fetch();
+        return $req->fetchAll();
     }
 }

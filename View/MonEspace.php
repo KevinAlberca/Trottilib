@@ -43,19 +43,23 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
+                            <th>Abonnement</th>
+                            <th>Date de début</th>
+                            <th>Date de fin</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>#</td>
-                            <td>First Name</td>
-                            <td>Last Name</td>
-                            <td>Username</td>
-                        </tr>
+<?php
+    $myAbo = $abo->showMySubscription($_SESSION['user']['id']);
+
+foreach($myAbo as $mA){
+    echo '<tr>
+            <td>'.$mA['nom'].'</td>
+            <td>'.$mA['date_debut'].'</td>
+            <td>'.$mA['date_fin'].'</td>
+    </tr>';
+}
+?>
                         </tbody>
                     </table>
                 </div>
