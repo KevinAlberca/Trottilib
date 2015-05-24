@@ -23,7 +23,8 @@ if (!$resultat_paypal){  // S'il y a une erreur, on affiche "Erreur", suivi du d
 
     // Si la requête a été traitée avec succès
     if ($liste_param_paypal['ACK'] == 'Success') {
-        echo "<h1>Youpii, le paiement a été effectué</h1>";
+        echo "<h1 class='title'>Le paiement a été effectué</h1>
+<p class='text-center'>Vous pouvez désormais vous rendre dans <a href='./?page=MonEspace'>votre espace</a> pour consultez votre abonnement.</p><script>setTimeout(function(){document.location.href='./?page=accueil';}, 2500);</script>";
         foreach($_SESSION['panier'] as $article) {
             $abo->subscribe($_SESSION['user']['id'], $article['id_abonnement'], $article['duree']);
         }

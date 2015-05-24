@@ -1,6 +1,81 @@
 body {
   overflow-x: hidden;
 }
+header {
+  padding-top: 150px;
+  margin: -150px 0 20px 0;
+  text-align: center;
+}
+header h1 {
+  margin-top: 120px;
+}
+.homepage {
+  background: url('../img/bg-header.png') center center no-repeat;
+  background-size: cover;
+}
+header .language {
+  width: 100px;
+  background-color: #f0f0f0;
+  border: 2px solid #000000;
+  float: right;
+  margin: 35px 75px 0 0;
+}
+header .btn-group .dropdown-toggle {
+  width: 100%;
+}
+header .btn-group.open .dropdown-toggle {
+  width: 100%;
+}
+header .language img {
+  width: 20px;
+  height: 12px;
+}
+header .language .dropdown-menu {
+  width: 100px;
+  min-width: 0;
+}
+header .logo,
+header .logo img {
+  width: 130px;
+  height: 130px;
+  margin: 20px 0 0 35px;
+  float: left;
+  position: absolute;
+}
+header .navbar,
+header .navbar .navbar-default {
+  margin: 10px 0 0 0;
+  height: 35px;
+  padding: 0;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.8);
+  border: 0;
+  border-top: 2px solid #cccccc;
+  border-bottom: 2px solid #cccccc;
+}
+header .navbar-nav {
+  float: none;
+  display: inline-block;
+  margin: -2px auto;
+  text-align: center;
+}
+header .concept {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #cccccc;
+}
+@media all and (max-width: 767px) {
+  header .navbar-default .navbar-collapse,
+  .navbar-default .navbar-form {
+    width: 100%;
+    overflow: hidden;
+    margin-top: -2px;
+    background: #ffffff;
+    z-index: 1000;
+    position: absolute;
+  }
+}
 .wrap {
   margin: 0 35px;
 }
@@ -81,6 +156,31 @@ body {
   float: left;
   text-align: center;
   font-size: 20px;
+}
+footer {
+  margin-bottom: 20px;
+}
+.join-us {
+  background: -webkit-linear-gradient(#558ba7, #8cacb7);
+  background: -o-linear-gradient(#558ba7, #8cacb7);
+  background: -moz-linear-gradient(#558ba7, #8cacb7);
+  background: linear-gradient(#558ba7, #8cacb7);
+  text-align: center;
+  padding: 20px 0;
+}
+.join-us h1,
+.join-us h2 {
+  text-decoration: none;
+  color: #ffffff;
+}
+.join-us h2 {
+  font-weight: 100;
+  margin-top: -10px;
+}
+footer .logo img {
+  width: 150px;
+  height: 150px;
+  margin: 20px 0 0 35px;
 }
 blockquote {
   margin: 30px auto;

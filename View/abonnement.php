@@ -38,17 +38,13 @@
         if(isset($_POST) && !empty($_POST)){
             addMessageFlash('success', 'L\'offre  : " '.$_POST['abonnement']. ' " a été ajoutée à votre panier');
 
-            echo '<p class="successBlock">'. end($_SESSION['flashBag']['success']) . '</p>';
-
             if(!isset($_SESSION['panier'])){
                 $_SESSION['panier'] = [];
             }
-            array_push($_SESSION['panier'], $_POST);
 
-            //$panier->addToBasket($_POST);
+            $panier->addToBasket($_POST);
 
-
-            echo '<a href="?page=panier">Go to panier</a>';
+            echo '<p class="successBlock">'. end($_SESSION['flashBag']['success']) . '</p>';
 
         } elseif(isset($_POST) && !empty($_POST) && empty($_SESSION)){
             header('Location : ./?page=connexion');

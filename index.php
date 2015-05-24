@@ -60,13 +60,13 @@
             'secure' => true,
         ],
 
-        'return' => [
-            'controller' => 'return',
+        'succes' => [
+            'controller' => 'succes',
             'secure' => true,
         ],
 
-        'cancel' => [
-            'controller' => 'cancel',
+        'abandon' => [
+            'controller' => 'abandon',
             'secure' => true,
         ],
 
@@ -127,9 +127,7 @@ $panier = new Basket(Connexion::getPDO());
     <link rel="stylesheet" href="./static/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./static/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="./static/css/fonts.css" />
-    <link rel="stylesheet" href="./static/css/header.public.css" />
-    <link rel="stylesheet" href="./static/css/style.public.css" />
-    <link rel="stylesheet" href="./static/css/footer.public.css" />
+    <link rel="stylesheet" href="./static/css/style.min.css" />
     <link rel="stylesheet" href="./static/css/tab.main.css" />
     <script src="./static/js/jquery-2.1.3.min.js"></script>
 
