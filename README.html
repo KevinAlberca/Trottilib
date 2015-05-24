@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>README - Trottilib'</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+	@import url(http://fonts.googleapis.com/css?family=Roboto);
+		body {font-family:'Roboto';color:#2C3E50;background:#ecf0f1;}
+		ul {border-left:5px solid #2C3E50;}
+		li {list-style: none;}
+	</style>
+</head>
+<body>
+	<h1>Trottilib' - SUP'Internet 2017</h1>
+	<h2>Arborescence du Site</h2>
+	<ul>
+		<li>/app/
+			<ul>
+				<li>config/
+					<ul>
+						<li>config.yml</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+			/Controller/
+			<ul>
+				<li>Basket.php (Classe en rapport avec le Panier)</li>
+				<li>Connexion.php (Classe en rapport avec la connexion à la base de donnée)</li>
+				<li>Subscription.php (Classe en rapport avec les abonnements)</li>
+				<li>User.php (Classe en rapport avec les utilisateurs)</li>
+			</ul>
+		</li>
+		<li>
+			/static/
+			<ul>
+				<li>css/</li>
+				<li>img/</li>
+				<li>js/</li>
+				<li>fonts</li>
+				<li>items/ (Dossier contenant le header et le footer)</li>
+			</ul>
+		</li>
+		<li>
+			/View/
+			<ul>
+				<li>404.php</li>
+				<li>abonnement.php</li>
+				<li>accueil.php</li>
+				<li>comment-sa-marche.php</li>
+				<li>connexion.php</li>
+				<li>inscription.php</li>
+				<li>logout.php</li>
+				<li>MonEspace.php</li>
+				<li>panier.php</li>
+				<li>plan.php</li>
+			</ul>
+		</li>
+		<li>/index.php</li>
+		<li>/autoload.php</li>
+		<li>composer.json</li>
+	</ul>
+
+	<h2>Technologies utilisées :</h2>
+	<ul>
+		<li>HTML5/CSS3</li>
+		<li>Javascript/jQuery</li>
+		<li>Plugins jQuery: tab.js</li>
+		<li>PHP5.5/MySQL (innoDB) + DBAL</li>
+		<li>YML</li>
+	</ul>
+
+	<h2>Fonctionnalitées :</h2>
+	<h3>Côté utilisateur</h3>
+	<ul>
+		<li>
+			<b>Inscription</b>
+			<p>
+				L'inscription requiert le nom, le prénom, le lieux de vie de l'utilisateur (adresse, code postal et ville), une date de naissance, et pour s'identifier : une adresse e-mail et un mot de passe.
+			</p>
+			<b>Processus :</b>
+			<ul>
+				<li>Comptage de nombre d'utilisateur ayant cette adresse e-mail en base de donnée</li>
+				<li>Si aucun utilisateur n'est trouvé, on procède à l'inscription, sinon, on lui indique l'erreur</li>
+				<li>Si aucun utilisateur n'est trouvé : chiffrement du mot de passe</li>
+				<li>Ajout en base de donnée de l'utilisateur</li>
+				<li>On ajoute ces informations dans notre base de donnée pour les recherches (partie back-office)</li>
+			</ul>
+		</li>
+		<li>
+			<b>Connexion</b>
+			<p>
+				La connexion sert à l'utilisateur de s'abonner et de gérer son abonnement
+			</p>
+			<b>Processus :</b>
+			<ul>
+				<li>On regarde combien d'utilisateur utilise l'adresse e-mail et le mot de passe renseigné en base de donnée</li>
+				<li>Connexion de l'utilisateur, via une SESSION</li>
+			</ul>
+		</li>
+		<li>
+			<b>Mon Espace</b>
+			<ul>
+				<li>Récapitulatif des informations</li>
+				<li>Récapitulatif de l'abonnement</li>
+				<li>Changement d'adresse</li>
+			</ul>
+		</li>
+	</ul>
+	<h3>Côté abonnement</h3>
+	<ul>
+		<li>
+			<b>Voir les abonnements disponibles</b>
+			<li>
+				Récupère en base de donnée toutes les informations liées aux abonnements
+			</li>
+			<li>
+				Affiche les informations sur la page
+			</li>
+		</li>
+		<li>
+			<b>Voir son abonnement</b>
+			<li>
+				Récupère en base de donnée, toutes les informations concernant les abonnements, correspondant à l'utilisateur
+			</li>
+		</li>
+	</ul>
+	<h3>Côté panier</h3>
+	<ul>
+		<li>
+			<b>Ajouter au panier</b>
+			<li>
+				Ajoute en SESSION l'article souhaité
+			</li>
+		</li>
+		<li>
+			<b>Vider le panier</b>
+			<li>
+				Vide la SESSION (unset)
+			</li>
+		</li>
+		<li>
+			<b>Acheter le panier</b>
+			<li>
+				Redirige vers la sandbox paypal pour procéder au paiement en ligne
+			</li>
+		</li>
+	</ul>
+	<h2>Modification depuis le 24/05</h2>
+	<p>Ajoutez les modification depuis cette date</p>
+</body>
+</html>

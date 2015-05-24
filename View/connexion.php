@@ -34,8 +34,8 @@ if(isset($_POST) && !empty($_POST)){
     }
 }else { ?>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-offset-3 col-sm-6 text-center">
+    <div class="row text-center">
+        <div class="col-xs-12 col-sm-offset-3 col-sm-6" style="margin-top:20px">
             <form class="form-horizontal" method="POST">
                 <div class="form-group col-xs-12">
                     <label for="adresse_email" class="col-sm-2 control-label">Adresse e-mail</label>
@@ -50,14 +50,13 @@ if(isset($_POST) && !empty($_POST)){
                     </div>
                 </div>
                 <div class="form-group col-xs-12 ">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Connexion</button>
-                    </div>
+                    <button type="submit" class="btn btn-default">Connexion</button>
                 </div>
             </form>
         </div>
     </div>
 <?php
-    echo '<a href="./?page=inscription">Pas de compte ? Inscrivez-vous</a>';
+    echo '<p class="text-center"><a href="./?page=inscription">Pas de compte ? Inscrivez-vous</a></p>';
 }
+?>
 

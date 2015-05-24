@@ -22,7 +22,6 @@ if(isset($_SESSION['panier']) && !empty($_SESSION['panier'])){?>
         <th>Quantité</th>
         <th>Durée</th>
         <th>Prix</th>
-        <th>Action</th>
     </tr>
     </thead>
     <tbody>
@@ -34,7 +33,6 @@ if(isset($_SESSION['panier']) && !empty($_SESSION['panier'])){?>
             <td>'.count($article['abonnement']).'</td>
             <td>'.$article['duree']. ' jours</td>
             <td>'.$article['prix'].' € (euros)</td>
-            <td><a href="?page=panier&del='.$article[$i].'">Supprimer</a></td>
         </tr>';
         $i++;
     }

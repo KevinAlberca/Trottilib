@@ -14,37 +14,37 @@ if (isset($_SESSION['user'])) {
                     <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" required />
                 </div>
             </div>
-            <div class="form-group col-xs-12 ">
+            <div class="form-group col-xs-12">
                 <label for="prenom" class="col-sm-2 control-label">Prénom</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom" required />
                 </div>
             </div>
-            <div class="form-group col-xs-12 ">
+            <div class="form-group col-xs-12">
                 <label for="adresse" class="col-sm-2 control-label">Adresse</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="adresse" name="adresse" placeholder="ex : 2 rue des tulipes" required />
                 </div>
             </div>
-            <div class="form-group col-xs-12 ">
+            <div class="form-group col-xs-12">
                 <label for="code_postal" class="col-sm-2 control-label">Code Postal</label>
                 <div class="col-sm-10">
                     <input type="number" class="form-control" id="code_postal" name="code_postal" placeholder="94240" required />
                 </div>
             </div>
-            <div class="form-group col-xs-12 ">
+            <div class="form-group col-xs-12">
                 <label for="ville" class="col-sm-2 control-label">Ville</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="ville" name="ville" placeholder="L'Haÿe-les-Roses" required />
                 </div>
             </div>
-            <div class="form-group col-xs-12 ">
+            <div class="form-group col-xs-12">
                 <label for="date_naissance" class="col-sm-2 control-label">Date de Naissance</label>
                 <div class="col-sm-10">
                     <input type="date" class="form-control" id="date_naissance" name="date_naissance" placeholder="JJ/MM/AAAA" required />
                 </div>
             </div>
-            <div class="form-group col-xs-12 ">
+            <div class="form-group col-xs-12">
                 <label for="adresse_email" class="col-sm-2 control-label">Adresse e-mail</label>
                 <div class="col-sm-10">
                     <input type="email" class="form-control" id="adresse_email" name="adresse_email" placeholder="example@website.org" required />
@@ -56,13 +56,13 @@ if (isset($_SESSION['user'])) {
                     <input type="password" class="form-control" id="pwd" name="pwd" placeholder="*********" required />
                 </div>
             </div>
-            <div class="form-group col-xs-12 ">
+            <div class="form-group col-xs-12">
                 <label for="pwdCheck" class="col-sm-2 control-label">Mot de passe</label>
                 <div class="col-sm-10">
                     <input type="password" class="form-control" id="pwdCheck" name="pwdCheck" placeholder="*********" required />
                 </div>
             </div>
-            <div class="form-group col-xs-12 ">
+            <div class="form-group col-xs-12">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default">Inscription</button>
                 </div>
