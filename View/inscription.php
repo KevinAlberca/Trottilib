@@ -35,7 +35,7 @@ if (isset($_SESSION['user'])) {
             <div class="form-group col-xs-12 ">
                 <label for="ville" class="col-sm-2 control-label">Ville</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="ville" name="ville" placeholder="L'Haÿ-les-Roses" required />
+                    <input type="text" class="form-control" id="ville" name="ville" placeholder="L'Haÿe-les-Roses" required />
                 </div>
             </div>
             <div class="form-group col-xs-12 ">
@@ -71,9 +71,9 @@ if (isset($_SESSION['user'])) {
         <a href="./?page=connexion">Vous avez déjà un compte ? Connectez-vous</a><br/>
 <?php
     $new = explode('/',$_POST['date_naissance']);
-    var_dump($_POST);
     $date_naissance = $new[2].'-'.$new[1].'-'.$new[0];
-echo $date_naissance;
+
+var_dump($date_naissance);
     $nom = strtoupper($_POST['nom']);
     $prenom = ucwords($_POST['prenom']);
     $adresse = $_POST['adresse'];
