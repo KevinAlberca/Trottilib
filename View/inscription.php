@@ -88,7 +88,7 @@ echo $date_naissance;
         if($pwd === $pwdCheck){
             if($user->addUser($nom, $prenom, $email, $date_naissance, $pwd, $adresse, $code_postal, $ville)){
                 $user->setDataSearch($nom, $prenom, $email, $ville);
-                echo "Le compte a été créé";
+                echo "Le compte a été créé<script>setTimeout(function(){document.location.href='./?page=connexion';}, 2500);</script>";
             } else {
                 echo "Une erreur est survenue lors de l'inscription";
             }
