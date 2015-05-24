@@ -45,8 +45,8 @@ class User extends Connexion {
             $pass = $resultHash['pass'];
             $salt = $resultHash['salt'];
 
-            $request = self::$db->prepare('INSERT INTO users(nom, prenom, email, password, date_naissance adresse, code_postal, ville, date_inscription, salt)
-                                            VALUES (:nom, :prenom, :email, :date_naissance :password, :adresse, :code_postal, :ville, NOW(), :salt)');
+            $request = self::$db->prepare('INSERT INTO users(nom, prenom, email, date_naissance, password, adresse, code_postal, ville, date_inscription, salt)
+                                            VALUES (:nom, :prenom, :email, :date_naissance, :password, :adresse, :code_postal, :ville, NOW(), :salt)');
             $response = $request->execute([
                 'nom' => $nom,
                 'prenom' => $prenom,
@@ -63,6 +63,43 @@ class User extends Connexion {
         } else {
             $response = false;
             return $response;
+        }
+    }
+
+    public function setDataSearch($nom, $prenom, $email, $ville){
+        $user_id = $this->getIdUser($email);
+        // Prenom Nom
+        $prenomNom = $prenom.' '.$nom;
+        $statement = $this->_conn->prepare('INSERT INTO data_search (mot_cle,id_table,nom_champ,id_item)
+            VALUES (:mot_cle,1,"utilisateur",:id_item);');
+        $statement->execute([
+            'mot_cle' => $prenomNom,
+            'id_item' => $user_id
+        ]);
+
+        // Email
+        $prenomNom = $prenom.' '.$nom;
+        $statement = $this->_conn->prepare('INSERT INTO data_search (mot_cle,id_table,nom_champ,id_item)
+            VALUES (:mot_cle,1,"email",:id_item);');
+        $statement->execute([
+            'mot_cle' => $email,
+            'id_item' => $user_id
+        ]);
+
+        // Ville
+        $statement = $this->_conn->prepare('SELECT * FROM data_search WHERE mot_cle = :mot_cle;');
+        $response = $statement->execute([
+            'mot_cle' => $ville
+        ]);
+        $response = $statement->fetch();
+
+        if (empty($response)) {
+            $prenomNom = $prenom.' '.$nom;
+            $statement = $this->_conn->prepare('INSERT INTO data_search (mot_cle,id_table,nom_champ)
+                VALUES (:mot_cle,1,"ville");');
+            $statement->execute([
+                'mot_cle' => $ville
+            ]);
         }
     }
 

@@ -71,7 +71,8 @@ if (isset($_SESSION['user'])) {
         <a href="./?page=connexion">Vous avez déjà un compte ? Connectez-vous</a><br/>
 <?php
     $new = explode('/',$_POST['date_naissance']);
-    $date_naissance = $new[2].'/'.$new[1].'/'.$new[0];
+    var_dump($_POST);
+    $date_naissance = $new[2].'-'.$new[1].'-'.$new[0];
 echo $date_naissance;
     $nom = strtoupper($_POST['nom']);
     $prenom = ucwords($_POST['prenom']);
@@ -86,7 +87,7 @@ echo $date_naissance;
     if(isset($_POST) && !empty($_POST)){
         if($pwd === $pwdCheck){
             if($user->addUser($nom, $prenom, $email, $date_naissance, $pwd, $adresse, $code_postal, $ville)){
-
+                $user->setDataSearch($nom, $prenom, $email, $ville);
                 echo "Le compte a été créé";
             } else {
                 echo "Une erreur est survenue lors de l'inscription";
