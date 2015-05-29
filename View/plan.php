@@ -44,7 +44,23 @@
             <button class="btn btn-block btn-search" type="submit">Rechercher</button>
         </div>
         <div class="col-xs-12 map">
-            <img src="./static/img/plan-avec-trotti.png" alt="" class="img-responsive"/>
+            <div id="map-canvas" style="width: 100%; min-height: 700px; height:80vh;"></div>
         </div>
     </div>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+<script type="text/javascript">
+    var map;
+    function initialize() {
+        // Create a simple map.
+        map = new google.maps.Map(document.getElementById('map-canvas'), {
+            zoom: 14,
+            center: {lat: 48.8535988, lng: 2.356068}
+        });
+
+        // Load a GeoJSON from the same server as our demo.
+        map.data.loadGeoJson('static/map/map.geojson');
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>

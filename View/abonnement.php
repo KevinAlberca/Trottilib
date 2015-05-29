@@ -1,4 +1,5 @@
 <div class="row">
+    <div class="container-fluid">
         <h2 class="title">Tous les abonnements <br /> <small>4 offres disponibles</small></h2>
 
         <?php

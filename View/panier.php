@@ -58,7 +58,6 @@ if(isset($_SESSION['panier']) && !empty($_SESSION['panier'])){?>
     </table>
 </div>
 <?php
-    var_dump($array_del);
     if(isset($_GET['del']) && !empty($_GET['del'])){
             if($_GET['del'] == $array_del){
                 unset($_SESSION['panier'][$_GET['del']]['abonnement'], $_SESSION['panier'][$_GET['del']]['duree'], $_SESSION['panier'][$_GET['del']]['prix'], $_SESSION['panier'][$_GET['del']]);
@@ -68,7 +67,7 @@ if(isset($_SESSION['panier']) && !empty($_SESSION['panier'])){?>
         }
     }
 
-    if(isset($_POST['vider'])){
+    if(isset($_POST['vider']) && !empty($_POST['vider'])){
         $panier->cleanMyBasket();
         addMessageFlash('success', "Votre panier a été vidé.");
         echo "<p class='successBlock'>".end($_SESSION['flashBag']['success'])."</p><script>setTimeout(function(){document.location.href='./?page=panier';}, 2500);</script>";
@@ -78,7 +77,8 @@ if(isset($_SESSION['panier']) && !empty($_SESSION['panier'])){?>
         for($i = 0; $i<count($_SESSION['panier']); $i++){
             @$prix = $prix + $_SESSION['panier'][$i]['prix'];
         }
-        echo $prix;
+
+        
         $_SESSION['paypal'] = [
             'prix' => $prix,
         ];
